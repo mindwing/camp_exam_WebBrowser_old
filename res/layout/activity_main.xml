@@ -15,4 +15,12 @@
         android:background="#a0a0e0"
         android:singleLine="true" />
 
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/text_url"
+        android:layout_marginTop="@dimen/activity_vertical_margin" />
+
 </RelativeLayout>

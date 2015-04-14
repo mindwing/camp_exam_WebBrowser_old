@@ -7,12 +7,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnKeyListener;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
 	private EditText textUrl;
+	private WebView webView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 
 		textUrl = (EditText) findViewById(R.id.text_url);
+		textUrl.setText("http://google.com");
 		textUrl.setOnKeyListener(new OnKeyListener() {
 
 			@Override
@@ -32,11 +35,7 @@ public class MainActivity extends Activity {
 
 				switch (keyCode) {
 				case KeyEvent.KEYCODE_ENTER:
-					Toast.makeText(
-							MainActivity.this,
-							textUrl.getText().toString() + ": "
-									+ event.getAction(), Toast.LENGTH_SHORT)
-							.show();
+					webView.loadUrl(textUrl.getText().toString());
 
 					processed = true;
 
@@ -51,6 +50,9 @@ public class MainActivity extends Activity {
 			}
 
 		});
+
+		webView = (WebView) findViewById(R.id.webview);
+		webView.setWebViewClient(new WebViewClient());
 	}
 
 	@Override
@@ -69,6 +71,7 @@ public class MainActivity extends Activity {
 		if (id == R.id.action_settings) {
 			return true;
 		}
+
 		return super.onOptionsItemSelected(item);
 	}
 
