@@ -6,20 +6,39 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
 	private EditText textUrl;
 	private WebView webView;
+	private Button backButton, forwardButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		backButton = (Button) findViewById(R.id.back);
+		backButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				if (webView.canGoBack()) {
+					webView.goBack();
+				} else {
+					Toast.makeText(MainActivity.this, "맨 뒷페이지 입니다.",
+							Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+		forwardButton = (Button) findViewById(R.id.forward);
 
 		textUrl = (EditText) findViewById(R.id.text_url);
 		textUrl.setText("http://google.com");
@@ -53,6 +72,15 @@ public class MainActivity extends Activity {
 
 		webView = (WebView) findViewById(R.id.webview);
 		webView.setWebViewClient(new WebViewClient());
+	}
+
+	public void goForward(View view) {
+		if (webView.canGoForward()) {
+			webView.goForward();
+		} else {
+			Toast.makeText(MainActivity.this, "맨 앞페이지 입니다.", Toast.LENGTH_SHORT)
+					.show();
+		}
 	}
 
 	@Override

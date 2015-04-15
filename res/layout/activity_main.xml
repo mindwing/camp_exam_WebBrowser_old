@@ -8,19 +8,46 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.camp_exam_web.MainActivity" >
 
-    <EditText
-        android:id="@+id/text_url"
+    <LinearLayout
+        android:id="@+id/upper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#a0a0e0"
-        android:singleLine="true" />
+        android:background="@drawable/shape"
+        android:orientation="horizontal"
+        android:padding="1dp" >
+
+        <EditText
+            android:id="@+id/text_url"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:layout_weight="6"
+            android:background="#a0a0e0"
+android:layout_marginLeft="5dp"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="뒤로" />
+
+        <Button
+            android:id="@+id/forward"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:onClick="goForward"
+            android:text="앞으로" />
+    </LinearLayout>
 
     <WebView
         android:id="@+id/webview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
-        android:layout_below="@id/text_url"
+        android:layout_below="@id/upper"
         android:layout_marginTop="@dimen/activity_vertical_margin" />
 
 </RelativeLayout>
