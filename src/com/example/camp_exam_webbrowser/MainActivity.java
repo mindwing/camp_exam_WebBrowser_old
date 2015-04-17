@@ -1,5 +1,11 @@
+// package 는 소스파일이 위치하는 디렉토리를 지정하는 것이라고 생각하세요.
+// .java 소스파일이 저장되는 고유의 저장공간이라고 생각하면 쉽습니다.
 package com.example.camp_exam_webbrowser;
 
+// import 는 필요한 라이브러리들을 가져오는 기능을 합니다.
+// 소문자로 되어 있는 부분들은 package 이며, 맨 마지막에 대문자로 시작하는 부분은 .class 파일의 이름입니다.
+// .class 는 .java 소스파일을 안드로이드가 해석하기 쉽도록 안드로이드 언어로 번역한 파일입니다.
+// 그와 단대로 .java 파일은 인간이 비교적 알아보기 더 쉬운 언어인 것을 생각하시면 됩니다.
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -14,8 +20,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+// 우리가 만들 소스코드 파일이름은 MainActivity.java 이며, 안드로이드용으로 해석되면 MainActivity.class 파일이 생성됩니다.
+// .class 파일이 생성되는 과정은 자동으로 이루어지므로, 우리는 소스코드에만 집중하면 됩니다.
+// "extends Activity" 라는 부분을 잘 보세요.
+// 이것은 Activity.class 파일을 가져다가 쓰겠다는 뜻입니다.
+// 맨 앞의 public 은 어떤 다른 소스코드에서라도 MainActivity 를 extends 해서 쓸 수 있도록 해주겠다는 뜻입니다.
 public class MainActivity extends Activity {
 
+	// EditText 는 
 	private EditText textUrl;
 	private WebView webView;
 	private Button backButton, forwardButton;
