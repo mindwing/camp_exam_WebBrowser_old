@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
 				if (webView.canGoBack()) {
 					webView.goBack();
 				} else {
-					Toast.makeText(MainActivity.this, "¸Ç µŞÆäÀÌÁö ÀÔ´Ï´Ù.",
+					Toast.makeText(MainActivity.this, "ë§¨ ë’·í˜ì´ì§€ ì…ë‹ˆë‹¤.",
 							Toast.LENGTH_SHORT).show();
 				}
 			}
@@ -78,7 +78,7 @@ public class MainActivity extends Activity {
 		if (webView.canGoForward()) {
 			webView.goForward();
 		} else {
-			Toast.makeText(MainActivity.this, "¸Ç ¾ÕÆäÀÌÁö ÀÔ´Ï´Ù.", Toast.LENGTH_SHORT)
+			Toast.makeText(MainActivity.this, "ë§¨ ì•í˜ì´ì§€ ì…ë‹ˆë‹¤.", Toast.LENGTH_SHORT)
 					.show();
 		}
 	}
